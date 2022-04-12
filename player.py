@@ -9,9 +9,32 @@ class Player(pygame.sprite.Sprite): # Classe qui hérite de sprite pygame
         self.image.set_colorkey([0, 0, 0]) # on met un bacground transparent
         self.rect = self.image.get_rect() # on defini un rectangle autour de l'image
         self.position = [x, y]
+        self.images = {
+            "down": self.get_image(0, 0),
+            "left": self.get_image(0, 32),
+            "right": self.get_image(0, 64),
+            "up": self.get_image(0, 96)
+        }
+        self.speed = 2
+        
+    def change_animation(self, name): 
+        self.image = self.images[name]
+        self.image.set_colorkey([0, 0, 0])
+        
+    # Definition des mouvement du joueur ----------------------
+    
+    def move_right(self): self.position[0] += self.speed
+    
+    def move_left(self): self.position[0] -= self.speed
+    
+    def move_up(self): self.position[1] -= self.speed
+    
+    def move_down(self): self.position[1] += self.speed
+    
+    # ----------------------------------------------------------
         
     def update(self):
-        self.rect.topleft = self.position
+        self.rect.topleft = self.position # vas définir la position du joueur
         
     def get_image(self, x, y):
         image = pygame.Surface([32, 32]) # défini la taille du bout d'image qu'on veut récupérer
