@@ -12,7 +12,7 @@ class Game:
         pygame.display.set_caption("Pygamon - Aventure") # titre de la fenetre
         
         # Charger la carte (tmx)
-        tmx_data = pytmx.util_pygame.load_pygame("carte.tmx") # Récupère le fichier qui contient la carte
+        tmx_data = pytmx.util_pygame.load_pygame("./assets/carte.tmx") # Récupère le fichier qui contient la carte
         map_data = pyscroll.data.TiledMapData(tmx_data) # Récupère les données de la cartes qui nous intéresse
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size()) # Contient tout les calques regroupé
         map_layer.zoom = 2
@@ -55,7 +55,7 @@ class Game:
                 
                 
     def switch_house(self):
-        tmx_data = pytmx.util_pygame.load_pygame("house.tmx") # Récupère le fichier qui contient la carte
+        tmx_data = pytmx.util_pygame.load_pygame("./assets/house.tmx") # Récupère le fichier qui contient la carte
         map_data = pyscroll.data.TiledMapData(tmx_data) # Récupère les données de la cartes qui nous intéresse
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size()) # Contient tout les calques regroupé
         map_layer.zoom = 2
@@ -81,7 +81,7 @@ class Game:
         self.player.position[1] = spawn_house_point.y
         
     def switch_world(self):
-        tmx_data = pytmx.util_pygame.load_pygame("carte.tmx") # Récupère le fichier qui contient la carte
+        tmx_data = pytmx.util_pygame.load_pygame("./assets/carte.tmx") # Récupère le fichier qui contient la carte
         map_data = pyscroll.data.TiledMapData(tmx_data) # Récupère les données de la cartes qui nous intéresse
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size()) # Contient tout les calques regroupé
         map_layer.zoom = 2

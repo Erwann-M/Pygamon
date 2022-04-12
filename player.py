@@ -4,7 +4,7 @@ class Player(pygame.sprite.Sprite): # Classe qui hérite de sprite pygame
     
     def __init__(self, x, y):
         super().__init__()
-        self.sprite_sheet = pygame.image.load("player.png") # récupere l'image du joueur
+        self.sprite_sheet = pygame.image.load("./assets/player.png") # récupere l'image du joueur
         self.image = self.get_image(0, 0) # a partir de quel point on découpe l'image
         self.image.set_colorkey([0, 0, 0]) # on met un bacground transparent
         self.rect = self.image.get_rect() # on defini un rectangle autour de l'image
